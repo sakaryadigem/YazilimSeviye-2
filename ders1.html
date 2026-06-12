@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HTML'e Giriş — Ders 1</title>
+  <link data-optimized="2" rel="stylesheet" href="style.css?v=2" />
+
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="badge">Ders 1</div>
+    <a href="ders1.html" class="h1-btn">HTML'e Giriş</a>
+    <p>Web sayfalarının temel yapı taşlarını öğreniyoruz.</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. HTML Nedir? -->
+  <div class="section">
+    <div class="section-label">Konu 1</div>
+    <h2>HTML Nedir?</h2>
+    <p>
+      <strong>HTML</strong> (HyperText Markup Language), web sayfalarının iskeletini oluşturan
+      bir işaretleme dilidir. Programlama dili değildir; tarayıcıya içeriğin nasıl
+      <em>yapılandırılacağını</em> söyler.
+    </p>
+    <p>
+      Bir web sayfası düşünüldüğünde HTML içeriği, CSS görünümü, JavaScript davranışı
+      yönetir. Biz bu derste HTML'in temellerini öğreneceğiz.
+    </p>
+    <!--div class="tip">
+      <span class="tip-icon">💡</span>
+      <p><strong>Unutma:</strong> Her web sayfası aslında bir metin dosyasıdır.
+      Uzantısı <code>.html</code> ya da <code>.htm</code> olur ve herhangi bir
+      metin editörüyle açılıp düzenlenebilir.</p>
+    </div-->
+  </div>
+
+  <!-- 2. Sayfa İskeleti -->
+  <div class="section">
+    <div class="section-label">Konu 2</div>
+    <h2>Temel Sayfa İskeleti</h2>
+    <p>
+      Her HTML belgesi aşağıdaki temel yapıyla başlar. Bu yapı tarayıcıya
+      "Bu bir HTML5 belgesidir ve Türkçe karakterler içerir" der.
+    </p>
+	<img src="ornek_resim2.png" alt="Bahçe 2" title="Bahçe 2 Resmi">
+<pre><code><span class="c-com">&lt;!-- Tarayıcıya: "Bu bir HTML5 belgesidir." --&gt;</span>
+<span class="c-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">lang</span>=<span class="c-val">"tr"</span><span class="c-tag">&gt;</span>
+
+  <span class="c-tag">&lt;head&gt;</span>
+    <span class="c-com">&lt;!-- Sayfayla ilgili bilgiler — kullanıcı görmez --&gt;</span>
+    <span class="c-tag">&lt;meta</span> <span class="c-attr">charset</span>=<span class="c-val">"UTF-8"</span><span class="c-tag"> /&gt;</span>
+    <span class="c-tag">&lt;title&gt;</span><span class="c-text">Benim Sayfam</span><span class="c-close">&lt;/title&gt;</span>
+    <span class="c-tag">&lt;link</span> <span class="c-attr">href</span>=<span class="c-val">"style.css"</span> <span class="c-attr">rel</span>=<span class="c-val">"stylesheet"</span><span class="c-tag"> /&gt;</span>
+  <span class="c-close">&lt;/head&gt;</span>
+
+  <span class="c-tag">&lt;body&gt;</span>
+    <span class="c-com">&lt;!-- Görünen içerik buraya gelir --&gt;</span>
+    <span class="c-text">Merhaba Dünya!</span>
+  <span class="c-close">&lt;/body&gt;</span>
+
+<span class="c-close">&lt;/html&gt;</span></code></pre>
+
+    <div class="warn">
+      <span style="font-size:1.2rem;flex-shrink:0">⚠️</span>
+      <p><strong>Dikkat:</strong> <code>&lt;head&gt;</code> ile <code>&lt;body&gt;</code>
+      birbirine karıştırılmamalı. Başlık, stil, meta bilgileri <code>head</code>'e;
+      görünen her şey <code>body</code>'ye yazılır.</p>
+    </div>
+	
+	<div class="tip">
+      <span class="tip-icon">💡</span>
+      <p><strong>Unutma:</strong> Her web sayfası aslında bir metin dosyasıdır.
+      Uzantısı <code>.html</code> ya da <code>.htm</code> olur ve herhangi bir
+      metin editörüyle açılıp düzenlenebilir.</p>
+    </div>
+  </div>
+
+  <!-- 3. Etiketler -->
+  <div class="section">
+    <div class="section-label">Konu 3</div>
+    <h2>Etiketler (Tags) Nasıl Çalışır?</h2>
+    <p>
+      HTML etiketleri <strong>açılış</strong> ve <strong>kapanış</strong> çiftlerinden oluşur.
+      Bazı etiketler kendi kendine kapanır (self-closing).
+    </p>
+	
+	<img 
+	src="ornek_resim.png" 
+	alt="Bahçe" title="Bahçe Resmi" 
+	/>
+	
+<pre><code><span class="c-com">&lt;!-- Açılış + içerik + kapanış --&gt;</span>
+<span class="c-tag">&lt;p&gt;</span><span class="c-text">Bu bir paragraftır.</span><span class="c-close">&lt;/p&gt;</span>
+
+<span class="c-com">&lt;!-- Kendi kendine kapanan etiket --&gt;</span>
+<span class="c-tag">&lt;hr /&gt;</span>   <span class="c-com">&lt;!-- yatay çizgi --&gt;</span>
+<span class="c-tag">&lt;br /&gt;</span>   <span class="c-com">&lt;!-- satır sonu --&gt;</span>
+<span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"resim.jpg"</span> <span class="c-attr">alt</span>=<span class="c-val">"Açıklama"</span> <span class="c-tag">/&gt;</span>
+
+<span class="c-com">&lt;!-- Özellik (attribute) kullanımı --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"https://orneksite.com"</span> <span class="c-attr">target</span>=<span class="c-val">"_blank"</span><span class="c-tag">&gt;</span>
+  <span class="c-text">Bağlantıya tıkla</span>
+<span class="c-close">&lt;/a&gt;</span></code></pre>
+
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Etiket</th>
+          <th>Ne İşe Yarar?</th>
+          <th>Örnek</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;h1&gt; … &lt;h6&gt;</code></td>
+          <td style="color:red;">Başlık (h1 en büyük, h6 en küçük)</td>
+          <td>Sayfa başlığı, bölüm adı</td>
+        </tr>
+        <tr>
+          <td><code>&lt;p&gt;</code></td>
+          <td>Paragraf</td>
+          <td>Normal metin bloğu</td>
+        </tr>
+        <tr>
+          <td><code>&lt;a&gt;</code></td>
+          <td>Bağlantı (link)</td>
+          <td>Başka sayfaya gitme</td>
+        </tr>
+        <tr>
+          <td><code>&lt;img&gt;</code></td>
+          <td>Resim</td>
+          <td>Görsel ekleme</td>
+        </tr>
+        <tr>
+          <td><code>&lt;ul&gt; / &lt;ol&gt; / &lt;li&gt;</code></td>
+          <td>Liste (sırasız / sıralı / öğe)</td>
+          <td>Maddeli listeler</td>
+        </tr>
+        <tr>
+          <td><code>&lt;table&gt;</code></td>
+          <td>Tablo</td>
+          <td>Veri tabloları</td>
+        </tr>
+        <tr>
+          <td><code>&lt;hr&gt;</code></td>
+          <td>Yatay çizgi</td>
+          <td>Bölüm ayırıcı</td>
+        </tr>
+        <tr>
+          <td><code>&lt;strong&gt;</code></td>
+          <td>Kalın (önemli) metin</td>
+          <td>Vurgu yapmak için</td>
+        </tr>
+        <tr>
+          <td><code>&lt;em&gt;</code></td>
+          <td>İtalik (vurgulu) metin</td>
+          <td>Özel terimler</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Bağlantılar -->
+  <div class="section">
+    <div class="section-label">Konu 4</div>
+    <h2>Bağlantılar ve Navigasyon</h2>
+    <p>
+      <code>&lt;a&gt;</code> etiketi (anchor = çapa) başka sayfalara, dosyalara
+      ya da aynı sayfanın farklı bölümlerine bağlantı oluşturur.
+      En önemli özelliği <code>href</code>'tir.
+    </p>
+<pre><code><span class="c-com">&lt;!-- Yeni sekmede açma --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"tablo.htm"</span> <span class="c-attr">target</span>=<span class="c-val">"_blank"</span><span class="c-tag">&gt;</span><span class="c-text">İlk Menü</span><span class="c-close">&lt;/a&gt;</span>
+
+<span class="c-com">&lt;!-- Aynı sekmede açma (varsayılan) --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"hakkimizda.htm"</span><span class="c-tag">&gt;</span><span class="c-text">Hakkımızda</span><span class="c-close">&lt;/a&gt;</span>
+
+<span class="c-com">&lt;!-- Dış siteye bağlantı --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"https://www.google.com"</span> <span class="c-attr">target</span>=<span class="c-val">"_blank"</span><span class="c-tag">&gt;</span>
+  <span class="c-text">Google'a git</span>
+<span class="c-close">&lt;/a&gt;</span></code></pre>
+
+    <p>Bu dersin orijinal menüsü şöyle görünür:</p>
+    <div class="demo-nav">
+      <a href="tablo.htm"  target="_blank">İlk Menü</a>
+      <a href="tablo2.htm" target="_blank">İkinci Menü</a>
+      <a href="tablo.htm"  target="_blank">Üçüncü Menü</a>
+      <a href="tablo.htm"  target="_blank">Dördüncü Menü</a>
+    </div>
+    <div class="tip">
+      <span class="tip-icon">💡</span>
+      <p>
+        <strong>target="_blank"</strong> bağlantıyı yeni sekmede açar.
+        Hiç yazmazsan aynı sekmede açılır.
+      </p>
+    </div>
+  </div>
+
+  <!-- 5. Listeler -->
+  <div class="section">
+    <div class="section-label">Konu 5</div>
+    <h2>Listeler</h2>
+    <p>HTML'de iki tür liste vardır: <strong>sırasız</strong> (madde imli) ve <strong>sıralı</strong> (numaralı).</p>
+<pre><code><span class="c-com">&lt;!-- Sırasız liste --&gt;</span>
+<span class="c-tag">&lt;ul&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">HTML</span><span class="c-close">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">CSS</span><span class="c-close">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">JavaScript</span><span class="c-close">&lt;/li&gt;</span>
+<span class="c-close">&lt;/ul&gt;</span>
+
+<span class="c-com">&lt;!-- Sıralı liste --&gt;</span>
+<span class="c-tag">&lt;ol&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">Önce HTML öğren</span><span class="c-close">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">Sonra CSS öğren</span><span class="c-close">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">Ardından JavaScript</span><span class="c-close">&lt;/li&gt;</span>
+<span class="c-close">&lt;/ol&gt;</span></code></pre>
+  </div>
+
+  <!-- 6. Resimler -->
+  <div class="section">
+    <div class="section-label">Konu 6</div>
+    <h2>Resim Ekleme</h2>
+    <p>
+      Resimler <code>&lt;img&gt;</code> etiketiyle eklenir. Kapanış etiketi yoktur.
+      İki zorunlu özellik vardır: <code>src</code> (kaynak dosya) ve <code>alt</code> (alternatif metin).
+    </p>
+<pre><code><span class="c-tag">&lt;img</span>
+  <span class="c-attr">src</span>=<span class="c-val">"foto.jpg"</span>
+  <span class="c-attr">alt</span>=<span class="c-val">"Güzel bir manzara fotoğrafı"</span>
+  <span class="c-attr">width</span>=<span class="c-val">"400"</span>
+  <span class="c-attr">height</span>=<span class="c-val">"300"</span>
+<span class="c-tag">/&gt;</span></code></pre>
+    <div class="warn">
+      <span style="font-size:1.2rem;flex-shrink:0">⚠️</span>
+      <p>
+        <strong>alt özelliğini boş bırakma!</strong> Ekran okuyucular görme engelli
+        kullanıcılara resmi <code>alt</code> metniyle tanıtır. Aynı zamanda resim
+        yüklenemediğinde bu metin gösterilir.
+      </p>
+    </div>
+  </div>
+
+  <!-- 7. CSS bağlantısı -->
+  <div class="section">
+    <div class="section-label">Konu 7</div>
+    <h2>CSS ile Stil Vermek</h2>
+    <p>
+      HTML sayfanın <em>içeriğini</em>, CSS ise <em>görünümünü</em> belirler.
+      CSS'i sayfaya bağlamak için <code>&lt;head&gt;</code> içine
+      <code>&lt;link&gt;</code> etiketi eklenir.
+    </p>
+<pre><code><span class="c-tag">&lt;head&gt;</span>
+  <span class="c-com">&lt;!-- Harici CSS dosyası bağlama --&gt;</span>
+  <span class="c-tag">&lt;link</span>
+    <span class="c-attr">href</span>=<span class="c-val">"style.css"</span>
+    <span class="c-attr">type</span>=<span class="c-val">"text/css"</span>
+    <span class="c-attr">rel</span>=<span class="c-val">"stylesheet"</span>
+  <span class="c-tag">/&gt;</span>
+
+  <span class="c-com">&lt;!-- Ya da doğrudan sayfa içine --&gt;</span>
+  <span class="c-tag">&lt;style&gt;</span>
+    <span class="c-attr">body</span> {
+      <span class="c-attr">background-color</span>: <span class="c-val">#f0f0f0</span>;
+      <span class="c-attr">font-family</span>: <span class="c-val">Arial, sans-serif</span>;
+    }
+  <span class="c-close">&lt;/style&gt;</span>
+<span class="c-close">&lt;/head&gt;</span></code></pre>
+  </div>
+
+  <!-- 8. Ödev -->
+  <div class="section" style="border-color: rgba(80,227,194,.35); background: rgba(80,227,194,.04);">
+    <div class="section-label" style="color: var(--accent3);">Alıştırma</div>
+    <h2>Bu Dersin Alıştırması 🎯</h2>
+    <p>Aşağıdakileri yaparak kendi HTML sayfanı oluştur:</p>
+    <ul class="list">
+      <li>Bir <code>&lt;h1&gt;</code> başlığı ekle (adın olsun)</li>
+      <li>En az 2 paragraf <code>&lt;p&gt;</code> yaz</li>
+      <li><code>&lt;ul&gt;</code> ile favori 3 şeyini listele</li>
+      <li>Bir <code>&lt;a href&gt;</code> bağlantısı koy</li>
+      <li><code>&lt;hr /&gt;</code> ile bölümleri ayır</li>
+      <li>Sayfayı <code>style.css</code> dosyasına bağla</li>
+    </ul>
+    <div class="tip">
+      <span class="tip-icon">🚀</span>
+      <p><strong>Bonus:</strong> <code>&lt;table&gt;</code> kullanarak
+      haftalık ders programını tabloya dökerek bir <code>tablo.htm</code> sayfası oluştur.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>HTML Dersi 1 &nbsp;·&nbsp; Bir sonraki ders: <a href="#">CSS Temelleri →</a></p>
+</footer>
+
+</body>
+</html>

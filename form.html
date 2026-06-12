@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Başvuru Formu</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f3f4f6;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: #111827;
+    }
+
+    .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .panel {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      padding: 1.5rem;
+    }
+
+    h1 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: #111827;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .req { color: #ef4444; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #f9fafb;
+      color: #111827;
+      font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+      background: #fff;
+    }
+
+    input.error, textarea.error {
+      border-color: #ef4444;
+      background: #fff8f8;
+    }
+
+    textarea { resize: vertical; }
+
+    .radio-row {
+      display: flex;
+      gap: 18px;
+      padding: 8px 0 4px;
+    }
+
+    .radio-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #374151;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .char-info {
+      font-size: 11px;
+      color: #9ca3af;
+      text-align: right;
+      margin-top: 3px;
+    }
+
+    .err-msg {
+      font-size: 12px;
+      color: #ef4444;
+      margin-top: 3px;
+      display: none;
+    }
+    .err-msg.show { display: block; }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    button {
+      padding: 8px 20px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      transition: all 0.15s;
+      border: 1px solid #d1d5db;
+      background: transparent;
+      color: #374151;
+    }
+    button:hover { background: #f3f4f6; }
+    button:active { transform: scale(0.98); }
+
+    button.primary {
+      background: #6366f1;
+      color: #fff;
+      border-color: transparent;
+    }
+    button.primary:hover { background: #4f46e5; }
+
+    .preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .preview-table tr:last-child td { border-bottom: none; }
+    .preview-table td {
+      padding: 8px 6px;
+      border-bottom: 1px solid #f3f4f6;
+      vertical-align: top;
+    }
+    .preview-table td:first-child {
+      color: #6b7280;
+      white-space: nowrap;
+      width: 42%;
+      font-size: 13px;
+    }
+    .preview-table td:last-child {
+      font-weight: 500;
+      color: #111827;
+      word-break: break-all;
+    }
+
+    .empty-note {
+      color: #9ca3af;
+      font-size: 13px;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .preview-img-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+    .preview-img-wrap img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+      display: block;
+      flex-shrink: 0;
+    }
+    .preview-img-name {
+      font-size: 12px;
+      color: #6b7280;
+      word-break: break-all;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- FORM PANELİ -->
+  <div class="panel">
+    <h1>Başvuru Formu</h1>
+
+    <div class="field">
+      <label for="isim">İsim</label>
+      <input type="text" id="isim" name="isim" placeholder="Adınızı girin" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>Cinsiyet</label>
+      <div class="radio-row">
+        <label><input type="radio" name="cinsiyet" value="Erkek" checked> Erkek</label>
+        <label><input type="radio" name="cinsiyet" value="Kadın"> Kadın</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="dogum">Doğum Tarihi <span class="req">*</span></label>
+      <input type="date" id="dogum" name="dogum_tarihi">
+      <div class="err-msg" id="dogum-err">Doğum tarihi zorunludur.</div>
+    </div>
+
+    <div class="field">
+      <label for="saat">Ders Saati <span class="req">*</span></label>
+      <input type="time" id="saat" name="saat">
+      <div class="err-msg" id="saat-err">Ders saati zorunludur.</div>
+    </div>
+
+    <div class="field">
+      <label for="email">E-posta <span class="req">*</span></label>
+      <input type="email" id="email" name="email" placeholder="ornek@email.com">
+      <div class="err-msg" id="email-err">Geçerli bir e-posta adresi girin.</div>
+    </div>
+
+    <div class="field">
+      <label for="resim">Resim</label>
+      <input type="file" id="resim" name="resim" accept="image/*">
+    </div>
+
+    <div class="field">
+      <label for="il">İl</label>
+      <select id="il" name="il">
+        <option value="İstanbul">İstanbul</option>
+        <option value="Ankara" selected>Ankara</option>
+        <option value="İzmir">İzmir</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="aciklama">Açıklama <span class="req">*</span></label>
+      <textarea id="aciklama" name="aciklama" maxlength="250" rows="3" placeholder="Açıklamanızı girin..."></textarea>
+      <div class="char-info" id="char-info">0 karakter</div>
+      <div class="err-msg" id="aciklama-err">Açıklama zorunludur.</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" onclick="resetForm()">Temizle</button>
+      <button class="primary" type="button" onclick="submitForm()">Gönder</button>
+    </div>
+  </div>
+
+  <!-- ÖNİZLEME PANELİ -->
+  <div class="panel">
+    <h1>Canlı Önizleme</h1>
+    <div id="preview-content">
+      <p class="empty-note">Formu doldurmaya başlayın…</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const f = {
+    isim:     document.getElementById('isim'),
+    dogum:    document.getElementById('dogum'),
+    saat:     document.getElementById('saat'),
+    email:    document.getElementById('email'),
+    resim:    document.getElementById('resim'),
+    il:       document.getElementById('il'),
+    aciklama: document.getElementById('aciklama'),
+  };
+
+  /* Otomatik büyük harf – isim */
+  f.isim.addEventListener('input', function () {
+    const pos = this.selectionStart;
+    this.value = this.value.toUpperCase();
+    this.setSelectionRange(pos, pos);
+    updatePreview();
+  });
+
+  /* Karakter sayacı – açıklama */
+  f.aciklama.addEventListener('input', function () {
+  const len = this.value.length;
+  const info = document.getElementById('char-info');
+  info.textContent = len + ' / 250 karakter';
+  info.style.color = len >= 230 ? '#ef4444' : '#9ca3af';
+  updatePreview();
+});
+
+  /* Resim önizleme */
+  let resimDataUrl = null;
+  let resimAdi = null;
+  f.resim.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      resimAdi = file.name;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        resimDataUrl = e.target.result;
+        updatePreview();
+      };
+      reader.readAsDataURL(file);
+    } else {
+      resimDataUrl = null;
+      resimAdi = null;
+      updatePreview();
+    }
+  });
+
+  /* Diğer alanlar */
+  ['dogum','saat','email','il'].forEach(k => {
+    f[k].addEventListener('change', updatePreview);
+    f[k].addEventListener('input', updatePreview);
+  });
+  document.querySelectorAll('input[name="cinsiyet"]').forEach(r =>
+    r.addEventListener('change', updatePreview)
+  );
+
+  function getCinsiyet() {
+    return document.querySelector('input[name="cinsiyet"]:checked')?.value || '';
+  }
+
+  function formatDate(d) {
+    if (!d) return '';
+    const [y, m, day] = d.split('-');
+    return day + '.' + m + '.' + y;
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function updatePreview() {
+    const rows = [
+      ['İsim',         f.isim.value],
+      ['Cinsiyet',     getCinsiyet()],
+      ['Doğum Tarihi', formatDate(f.dogum.value)],
+      ['Ders Saati',   f.saat.value],
+      ['E-posta',      f.email.value],
+      ['Resim',        resimDataUrl ? '__img__' : ''],
+      ['İl',           f.il.value],
+      ['Açıklama',     f.aciklama.value],
+    ];
+
+    const preview = document.getElementById('preview-content');
+    const anyFilled = rows.some(([,v]) => v && v.trim());
+
+    if (!anyFilled) {
+      preview.innerHTML = '<p class="empty-note">Formu doldurmaya başlayın…</p>';
+      return;
+    }
+
+    let html = '<table class="preview-table">';
+    rows.forEach(([label, val]) => {
+      let display;
+      if (label === 'Resim' && resimDataUrl) {
+        display = `<div class="preview-img-wrap"><img src="${resimDataUrl}" alt="Yüklenen resim"><span class="preview-img-name">${escHtml(resimAdi)}</span></div>`;
+      } else {
+        display = val && val.trim()
+          ? escHtml(val)
+          : '<span style="color:#d1d5db">—</span>';
+      }
+      html += `<tr><td>${label}:</td><td>${display}</td></tr>`;
+    });
+    html += '</table>';
+    preview.innerHTML = html;
+  }
+
+  function validateEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  function showErr(id, show) {
+    const msg = document.getElementById(id + '-err');
+    const inp = f[id];
+    if (msg) msg.classList.toggle('show', show);
+    if (inp) inp.classList.toggle('error', show);
+  }
+
+  function submitForm() {
+    let valid = true;
+    if (!f.dogum.value)                            { showErr('dogum', true);    valid = false; } else showErr('dogum', false);
+    if (!f.saat.value)                             { showErr('saat', true);     valid = false; } else showErr('saat', false);
+    if (!f.email.value || !validateEmail(f.email.value)) { showErr('email', true); valid = false; } else showErr('email', false);
+    if (!f.aciklama.value.trim())                  { showErr('aciklama', true); valid = false; } else showErr('aciklama', false);
+
+    if (valid) {
+      alert('Form başarıyla gönderildi! ✓');
+    }
+  }
+
+  function resetForm() {
+    f.isim.value = '';
+    f.dogum.value = '';
+    f.saat.value = '';
+    f.email.value = '';
+    f.resim.value = '';
+    resimDataUrl = null;
+    resimAdi = null;
+    f.il.value = 'Ankara';
+    f.aciklama.value = '';
+    document.querySelector('input[name="cinsiyet"][value="Erkek"]').checked = true;
+    document.getElementById('char-info').textContent = '0 karakter';
+    ['dogum','saat','email','aciklama'].forEach(k => showErr(k, false));
+    document.getElementById('preview-content').innerHTML =
+      '<p class="empty-note">Formu doldurmaya başlayın…</p>';
+  }
+
+  updatePreview();
+</script>
+</body>
+</html>
