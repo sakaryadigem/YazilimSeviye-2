@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Laboratuvarı - Biyoloji Eğitim Merkezi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigasyon Menüsü -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h1 class="logo-text">Gen Laboratuvarı</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Anasayfa</a></li>
+                    <li><a href="#about" class="nav-link">Hakkında</a></li>
+                    <li><a href="#training" class="nav-link">Eğitimler</a></li>
+                    <li><a href="#contact" class="nav-link">İletişim</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Bölümü -->
+    <section id="home" class="hero">
+        <div class="hero-slides">
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1200/600?random=1');"></div>
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1200/600?random=2');"></div>
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1200/600?random=3');"></div>
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1200/600?random=4');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Gen Laboratuvarı'na Hoş Geldiniz</h2>
+            <p>Lise öğrencileri için modern biyoloji eğitim ve araştırma merkezi</p>
+            <button class="btn btn-primary">Keşfet</button>
+        </div>
+    </section>
+
+    <!-- Sayaç Bölümü -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" data-target="250">0</div>
+                    <p>Eğitim Alan Öğrenci</p>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="45">0</div>
+                    <p>Başarılı Proje</p>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="12">0</div>
+                    <p>Deneyim Türü</p>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="5">0</div>
+                    <p>Uzman Öğretmen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkında Bölümü -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Hakkında</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Gen Laboratuvarı Nedir?</h3>
+                    <p>Gen Laboratuvarı, lise öğrencilerine biyoloji biliminin temel konularını uygulamalı olarak öğreten modern bir eğitim merkezidir. Son teknoloji ekipmanlar ve deneyimli öğretmenlerimiz ile öğrencilerin bilimsel düşünme becerilerini geliştirmelerini sağlarız.</p>
+                    <p>Laboratuvarımızda yapılan deneyimler, öğrencilerin teorik bilgileri pratik alanda uygulamasına, bilimsel yöntemi öğrenmesine ve araştırma yapma becerisi kazanmasına yardımcı olur.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Modern laboratuvar ekipmanları</li>
+                        <li><i class="fas fa-check-circle"></i> Uzman ve deneyimli öğretmenler</li>
+                        <li><i class="fas fa-check-circle"></i> Küçük grup çalışmaları</li>
+                        <li><i class="fas fa-check-circle"></i> Uygulamalı eğitim yöntemleri</li>
+                    </ul>
+                </div>
+                <div class="gallery">
+                    <h3>Laboratuvar Görselleri</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/mikroskop.png" alt="Laboratuvar 1">
+                            <div class="gallery-overlay">
+                                <p>Mikroskop Çalışmaları</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/300/200?random=102" alt="Laboratuvar 2">
+                            <div class="gallery-overlay">
+                                <p>DNA Analizi</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/300/200?random=103" alt="Laboratuvar 3">
+                            <div class="gallery-overlay">
+                                <p>Kimyasal Testler</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/300/200?random=104" alt="Laboratuvar 4">
+                            <div class="gallery-overlay">
+                                <p>Hücre İncelemesi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eğitimler Bölümü -->
+    <section id="training" class="training">
+        <div class="container">
+            <h2 class="section-title">Eğitim Takvimi</h2>
+            <div class="training-content">
+                <div class="calendar-info">
+                    <h3>Aylık Eğitim Planı</h3>
+                    <p>Aşağıda görülen takvimde aylık olarak düzenlenen eğitimler ve deneyimler gösterilmektedir.</p>
+                </div>
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonth">Haziran 2026</h3>
+                        <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <div class="weekday">Pzt</div>
+                        <div class="weekday">Sal</div>
+                        <div class="weekday">Çar</div>
+                        <div class="weekday">Per</div>
+                        <div class="weekday">Cum</div>
+                        <div class="weekday">Cmt</div>
+                        <div class="weekday">Paz</div>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+            </div>
+
+            <div class="training-courses">
+                <h3>Eğitim Programları</h3>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h4>Mikroskop Teknikleri</h4>
+                        <p>Işık ve elektron mikroskobu kullanımı, hazırlama ve gözlem teknikleri</p>
+                        <span class="course-level">Başlangıç</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h4>DNA ve Genetik</h4>
+                        <p>DNA yapısı, gen işleyişi ve genetik deney uygulamaları</p>
+                        <span class="course-level">Orta</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Kimyasal Analiz</h4>
+                        <p>Biyokimya testleri, ph ölçümleri ve kimyasal reaksiyonlar</p>
+                        <span class="course-level">Orta</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Bitki Biyolojisi</h4>
+                        <p>Bitki yapısı, fotosentez ve bitki hücre gözlemleri</p>
+                        <span class="course-level">Başlangıç</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Bölümü -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">İletişim</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Bize Ulaşın</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Adres</h4>
+                            <p>Eğitim Caddesi No: 42<br>İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>E-posta</h4>
+                            <p><a href="mailto:info@genlab.edu.tr">info@genlab.edu.tr</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+905551234567">+90 (555) 123-4567</a></p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Bize Mesaj Gönderin</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Adınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="E-posta Adresiniz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefon Numaranız">
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Konu Seçiniz</option>
+                                <option value="training">Eğitim Hakkında Bilgi</option>
+                                <option value="registration">Kayıt İşlemleri</option>
+                                <option value="equipment">Ekipman Kullanımı</option>
+                                <option value="other">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mesajınız..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Gen Laboratuvarı. Tüm hakları saklıdır.</p>
+            <p>Lise öğrencileri için biyoloji eğitim ve araştırma merkezi</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

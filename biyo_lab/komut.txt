@@ -1,0 +1,12 @@
+Lise Öğrencileri İçin Biyoloji Laboratuvarı
+- Sayfaya uygun bir logo ve labaratuvara uygun isim oluştur.
+- Lise seviyesindeki öğrencilerin kullanımı için bir biyoloji labaratuvarının tanıtım web sayfası olacaktır
+- Öğrencilerin ilgisini çekmesi için yeşil, turuncu ve mavi tonda renkler ağırlıklı olsun
+- Font olarak uyumlu bir font olsun
+- Üst kısımda anasayfa, hakkında, eğitimler ve iletişim olsun
+- Her menünün içeriği uygun şekilde oluşturulsun.
+- Eğitimler kısmında labaratuvarda düzenli verilen eğitimlerin planlanmasını ve aylık takvim görselinde gösterilsin
+- Hakkında kısmında bazı görsellerin listelendiği bir galeri bölümü olsun
+- Hero alanının altında otomatik ilerleyen bir sayaç olsun
+- İletişim kısmında bir tarafta adres, email ve telefon bilgisi olsun. Diğer kısımda iletişim formu olsun.
+- Sayfa html, css, js ile oluşturulsun
