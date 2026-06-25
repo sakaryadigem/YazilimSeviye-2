@@ -7,7 +7,8 @@
 Bir web uygulamasını dockerize edip çalıştırmak için docker_compose.yml dosyası ilgili path içerisinde olmalıdır. mat_geme dizinindeki örneğe bakınız.
 
 Uygula, mariadb ve phpmyadmini çalıştırmak için örnek olarak aşağıdaki komutlar docker içerisindeki console ekranıda çalıştırılabilir.
-* docker run -d --name mat_game -p 3000:3000 
+* İlgili dizinde docker-compose up -d komutu ile proje docker içerisnde çalıştırılır
+* docker run -d --name mat_game -p 3000:3000 ##farklı bir portta image run edilebilir
 * docker run -d --name mariadb --network app-network -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root54 mariadb
 * docker run -d --name phpmyadmin --network app-network -p 8080:80 -e PMA_HOST=mariadb phpmyadmin/phpmyadmin
 
