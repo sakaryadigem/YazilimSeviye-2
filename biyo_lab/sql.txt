@@ -1,0 +1,17 @@
+Gen Laboratuvarı isminde bir lise öğrencileri için 
+modern biyoloji eğitim ve araştırma merkezi
+için bir web sayfamız vardır.
+
+- Eğitim almak isteyen öğrenciler tablosu
+- Eğitimlerin kategori tablosu
+- Eğitimlerin listelendiği içerik tablosu
+- Eğitim tarihlerine göre kayıt tablosu
+- Öğrencilerin eğitimlere başvuru yaptığı listeyi tutan tablosu
+- Portal kullanıcı tablosu
+- İletişim bölümünden yazılanların tutulduğu tablo
+- Duyuruların kaydının tutulduğu tablo
+
+Bu şekilde kurgulanmış bir portal için gerekli veritabanı modelini
+ tablo ve detayları ile oluşturacak şekilde 
+ve mariadbye import edebilecek şekilde SQL çıktısını üret.
+- Gerekli primary key, index ve foreign key detayları ile oluştur
