@@ -1,0 +1,25 @@
+Ödev 1: ders1.html ve css dosyası paylaşıldı
+1. CSS'ye Giriş ve JS Giriş diye arka planları farklı renkte 2 menü ekleyin
+2. header kısmı fixed olarak sayfada kaydıkça sabit kalsın
+
+
+Ödev 2: html, JS, Css teknolojileri kullanılarak örnek bir girişimin web tanıtım sayfası 
+veya basit bir web oyunu yazınız. Yapay zeka kullanabilirsiniz. 
+Sadece kendiniz bazı ilaveler yapıp koda commentler bırakmanızı istiyoruz. 
+Html, Css ve Js kısımlarına en az 1 kere manuel ilaveler yapın. 
+Pazartesi dersine kadar ödevi göndermeye çalışalım.
+
+
+
+Ödev 3:
+- Vite, React ve TypeScript kullanarak bir şairler platformu yapınız
+- Menüler: 
+	* Anasayfa: Anasayfaya gider. Hero alanında son şairler, şiirler görsel ve uygun içerikle dönen bir banner alanı olur. Şair kaydı ve şiirini gönder formları olsun. Form doldurunca göndere basınca başarılı desin.[Sayaç olsun]
+	* Şairler: İçerikler json dosyasından okunacak şekilde kodlansın. Şairlerin profilleri(Ad Soyad, görseli, şiirleri, kitapları, özgeçmişi) listelenir. En az 10 tane örnek içerik olsun. Arama yapılabilir.
+	* Şiirler: İçerikler json dosyasından okunacak şekilde kodlansın. Şairlerin şiirleri listelenir. Şiirin başlığı, içeriği, türü ve şairi görünür. Şaire tıklayınca profile gider. Arama yapılabilir. Örnek en az 10 tane içerik eklenmiş olsun.
+	* Etkinlikler: İçerikler json dosyasından okunacak şekilde kodlansın. Şiir dinletisi etkinlikleri takvimli görüntü ve detaylı içerik olacak en az 10 örnek olsun.
+	* Hakkında: Sitenin kurulumu, tarihsel gelişimi vs anlatıldığı tarihsel ilerleyişi diyagram şeklinde olsun.
+	* İletişim: Adres ve iletişim formu olsun. Form doldurunca göndere basınca başarılı desin.
+- Projede docker-compose.yml dosyası olsun ve docker içerisinde çalışacak şekilde ayarlanmış komutlar olsun
+- Github üzerinde bir hesap oluşturup projenizi yayınlayın. Proje dizininde .gitignore olsun ve sadece gerekli dosyaları push edin.
+- Githubdaki yayınladığınız projenin erişim adresini gruptan paylaşın
